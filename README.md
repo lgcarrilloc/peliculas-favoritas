@@ -1,16 +1,67 @@
-# React + Vite
+# Taller 2: Ejercicio de Listas en React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Estudiante
 
-Currently, two official plugins are available:
+Luis Gustavo Carrillo Chávez
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Opción seleccionada
 
-## React Compiler
+Opción 3: Ejemplo de listas trabajado en clases.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Descripción del proyecto
 
-## Expanding the ESLint configuration
+Para este taller desarrollé una aplicación llamada **Mis Películas Favoritas** utilizando React.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+La aplicación muestra una lista de películas y permite agregar nuevas películas mediante un cuadro de texto. También es posible marcar una película como favorita haciendo clic sobre ella y eliminar películas de la lista cuando ya no sean necesarias.
+
+## Funcionamiento
+
+La lista de películas se almacena en un estado utilizando `useState`.
+
+Para mostrar los elementos se utiliza el método `map()`, que recorre el arreglo y genera dinámicamente cada película en pantalla.
+
+Además, la aplicación incluye:
+
+- Agregar nuevas películas.
+- Marcar películas favoritas con una estrella ⭐.
+- Eliminar películas con un botón 🗑️.
+- Mostrar la cantidad total de películas registradas.
+- Diseño responsivo para computadoras y dispositivos móviles.
+
+## Cambios y mejoras realizadas
+
+Durante el desarrollo se realizaron varias mejoras:
+
+### Versión inicial
+
+- Creación del proyecto con Vite.
+- Mostrar el título principal.
+- Mostrar una lista simple de películas.
+
+### Mejoras posteriores
+
+- Creación del componente `Pelicula`.
+- Uso de props para enviar el título de cada película.
+- Implementación de `useState`.
+- Marcar películas favoritas.
+- Agregar películas mediante un input controlado.
+- Mostrar la lista utilizando `map()`.
+- Incorporar contador de películas.
+- Agregar botón para eliminar películas.
+- Mejorar la apariencia visual con CSS.
+- Adaptar el diseño para dispositivos móviles.
+
+## Tecnologías utilizadas
+
+- React
+- Vite
+- JavaScript
+- HTML
+- CSS
+
+## Instalación
+
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/lgcarrilloc/peliculas-favoritas.git
