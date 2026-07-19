@@ -35,9 +35,17 @@ function App() {
     }
   };
 
+  const eliminarPelicula = (indexEliminar) => {
+    setPeliculas(
+      peliculas.filter((_, index) => index !== indexEliminar)
+    );
+  };
+
   return (
     <div>
       <h1>Mis Películas Favoritas</h1>
+
+      <p>Total de películas: {peliculas.length}</p>
 
       <input
         type="text"
@@ -51,15 +59,25 @@ function App() {
       </button>
 
       {peliculas.map((pelicula, index) => (
-        <Pelicula key={index} titulo={pelicula} />
+        <div
+          key={index}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+          }}
+        >
+          <Pelicula titulo={pelicula} />
+
+          <button
+            onClick={() => eliminarPelicula(index)}
+          >
+            🗑️
+          </button>
+        </div>
       ))}
     </div>
   );
 }
-const eliminarPelicula = (indexEliminar) => {
-  setPeliculas(
-    peliculas.filter((_, index) => index !== indexEliminar)
-  );
-};
 
 export default App;
