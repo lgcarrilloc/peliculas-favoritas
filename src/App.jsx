@@ -4,16 +4,12 @@ function Pelicula({ titulo }) {
   const [esFavorita, setEsFavorita] = useState(false);
 
   return (
-    <p
+    <div
+      className={`pelicula ${esFavorita ? "favorita" : ""}`}
       onClick={() => setEsFavorita(!esFavorita)}
-      style={{
-        cursor: "pointer",
-        color: esFavorita ? "goldenrod" : "black",
-        fontWeight: esFavorita ? "bold" : "normal",
-      }}
     >
       {titulo} {esFavorita ? "⭐" : ""}
-    </p>
+    </div>
   );
 }
 
@@ -42,34 +38,35 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Mis Películas Favoritas</h1>
+    <div className="container">
+      <h1>🎬 Mis Películas Favoritas</h1>
 
-      <p>Total de películas: {peliculas.length}</p>
+      <p className="contador">
+        Total de películas: {peliculas.length}
+      </p>
 
-      <input
-        type="text"
-        placeholder="Escribe una película"
-        value={nuevaPelicula}
-        onChange={(e) => setNuevaPelicula(e.target.value)}
-      />
+      <div className="formulario">
+        <input
+          type="text"
+          placeholder="Escribe una película"
+          value={nuevaPelicula}
+          onChange={(e) => setNuevaPelicula(e.target.value)}
+        />
 
-      <button onClick={agregarPelicula}>
-        Agregar
-      </button>
+        <button onClick={agregarPelicula}>
+          Agregar
+        </button>
+      </div>
 
       {peliculas.map((pelicula, index) => (
         <div
           key={index}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-          }}
+          className="pelicula-container"
         >
           <Pelicula titulo={pelicula} />
 
           <button
+            className="btn-eliminar"
             onClick={() => eliminarPelicula(index)}
           >
             🗑️
