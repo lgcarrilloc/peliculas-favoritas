@@ -1,0 +1,60 @@
+import { useState } from "react";
+
+function Pelicula({ titulo }) {
+  const [esFavorita, setEsFavorita] = useState(false);
+
+  return (
+    <p
+      onClick={() => setEsFavorita(!esFavorita)}
+      style={{
+        cursor: "pointer",
+        color: esFavorita ? "goldenrod" : "black",
+        fontWeight: esFavorita ? "bold" : "normal",
+      }}
+    >
+      {titulo} {esFavorita ? "⭐" : ""}
+    </p>
+  );
+}
+
+function App() {
+  const [peliculas, setPeliculas] = useState([
+    "Son como niños",
+    "Son como niños 2",
+    "Iron Man",
+    "Iron Man 2",
+    "Avengers Endgame",
+  ]);
+
+  const [nuevaPelicula, setNuevaPelicula] = useState("");
+
+  const agregarPelicula = () => {
+    if (nuevaPelicula.trim() !== "") {
+      setPeliculas([...peliculas, nuevaPelicula]);
+      setNuevaPelicula("");
+    }
+  };
+
+  return (
+    <div>
+      <h1>Mis Películas Favoritas</h1>
+
+      <input
+        type="text"
+        placeholder="Escribe una película"
+        value={nuevaPelicula}
+        onChange={(e) => setNuevaPelicula(e.target.value)}
+      />
+
+      <button onClick={agregarPelicula}>
+        Agregar
+      </button>
+
+      {peliculas.map((pelicula, index) => (
+        <Pelicula key={index} titulo={pelicula} />
+      ))}
+    </div>
+  );
+}
+
+export default App;

@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+}
+
+#root {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.formulario {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.formulario input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+.formulario button {
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.formulario button:hover {
+  background: #16a34a;
+}
+
+.pelicula {
+  background: #1e293b;
+  color: white;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pelicula:hover {
+  transform: scale(1.02);
+}
+
+.favorita {
+  background: #fbbf24;
+  color: black;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .formulario {
+    flex-direction: column;
+  }
+
+  .formulario button {
+    width: 100%;
+  }
+
+  .pelicula {
+    font-size: 18px;
+    padding: 12px;
+  }
+}
