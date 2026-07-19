@@ -56,5 +56,10 @@ function App() {
     </div>
   );
 }
+const eliminarPelicula = (indexEliminar) => {
+  setPeliculas(
+    peliculas.filter((_, index) => index !== indexEliminar)
+  );
+};
 
 export default App;
